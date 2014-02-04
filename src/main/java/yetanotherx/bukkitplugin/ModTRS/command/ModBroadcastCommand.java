@@ -32,7 +32,7 @@ public class ModBroadcastCommand implements CommandExecutor {
 
         player = event.getSender();
         joined = event.getText();
-	
+
 	if( !player.hasPerm("modtrs.command.broadcast") ) {
 	    player.sendMessage(Message.parse("general.error.permission"));
 	}

@@ -17,36 +17,36 @@ public class ModTRSUserTable {
 
     /**
      * Constructor for ModTRSUserTable
-     * @param parent 
+     * @param parent
      */
     public ModTRSUserTable(ModTRS parent) {
         this.parent = parent;
     }
 
     /**
-     * Returns a {@link ModTRSUser} for the given username. 
+     * Returns a {@link ModTRSUser} for the given username.
      * @param name Username to retrieve
      * @return ModTRSUser
-     * @throws SQLException 
+     * @throws SQLException
      */
     public ModTRSUser getUserFromName(String name) throws SQLException {
         return parent.getDatabase().find(ModTRSUser.class).where().eq("name", name).findUnique();
     }
 
     /**
-     * Returns a {@link ModTRSUser} for the given user ID. 
+     * Returns a {@link ModTRSUser} for the given user ID.
      * @param id User ID to retrieve
      * @return ModTRSUser
-     * @throws SQLException 
+     * @throws SQLException
      */
     public ModTRSUser getUserFromId(int id) throws SQLException {
         return parent.getDatabase().find(ModTRSUser.class).where().eq("id", String.valueOf(id)).findUnique();
     }
-    
+
     /**
-     * Returns a List of all the {@link ModTRSUser}s in the database. 
+     * Returns a List of all the {@link ModTRSUser}s in the database.
      * @return ArrayList
-     * @throws SQLException 
+     * @throws SQLException
      */
     public List<ModTRSUser> getUserList() throws SQLException {
         return parent.getDatabase().find(ModTRSUser.class).findList();

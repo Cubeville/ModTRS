@@ -48,12 +48,12 @@ public class BanCommand implements CommandExecutor {
                 player.sendMessage(Message.parse("ban.already_banned", user.getName()));
                 return true;
             }
-            
+
             user.setBanned(1);
             user.save(parent);
-            
+
             ModTRSFunctions.messageMods(Message.parse("ban.mods", user.getName()), player.getServer());
-            
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -63,5 +63,5 @@ public class BanCommand implements CommandExecutor {
         return true;
 
     }
-    
+
 }

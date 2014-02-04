@@ -15,10 +15,10 @@ public class SaveRowEvent extends Event {
     public void setModel(Object model) {
         this.model = model;
     }
-    
+
     @Override
     public Type getType() {
         return Type.SAVE_ROW;
     }
-    
+
 }

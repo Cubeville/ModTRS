@@ -18,7 +18,7 @@ public class ModTRSUser implements Serializable {
 
     @Id
     private int id;
-    
+
     @NotNull
     private String name;
     private int banned = 0;
@@ -54,7 +54,7 @@ public class ModTRSUser implements Serializable {
     public void setBanned(int banned) {
         this.banned = banned;
     }
-    
+
     public void save(ModTRS parent) {
         parent.getAPI().saveRow(this);
     }

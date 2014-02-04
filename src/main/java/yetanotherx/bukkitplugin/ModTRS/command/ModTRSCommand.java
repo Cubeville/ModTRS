@@ -11,7 +11,7 @@ import yetanotherx.bukkitplugin.ModTRS.validator.NoArgumentsValidator;
 public class ModTRSCommand implements CommandExecutor {
 
     private ModTRS parent;
-    
+
     public ModTRSCommand(ModTRS parent) {
         this.parent = parent;
         ValidatorHandler.getInstance().registerValidator("modtrs", new NoArgumentsValidator(this, parent));

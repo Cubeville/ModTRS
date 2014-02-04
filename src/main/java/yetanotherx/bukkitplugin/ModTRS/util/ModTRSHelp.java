@@ -11,7 +11,7 @@ public class ModTRSHelp {
 
     /**
      * List of all help messages
-     * 
+     *
      * String[0] = Command syntax
      * String[1] = Description
      * String[2] = Necessary permission

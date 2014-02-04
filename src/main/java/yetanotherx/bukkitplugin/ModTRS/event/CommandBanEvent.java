@@ -27,7 +27,7 @@ public class CommandBanEvent extends Event {
     public void setUsername(String username) {
         this.username = username;
     }
-    
+
     @Override
     public Type getType() {
         return Type.COMMAND_BAN;

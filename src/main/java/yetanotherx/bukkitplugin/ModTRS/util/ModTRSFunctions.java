@@ -2,12 +2,11 @@ package yetanotherx.bukkitplugin.ModTRS.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 
 public class ModTRSFunctions {
-    
+
     /**
      * Send a message to all the moderators (people with the modtrs.mod permission)
      */
@@ -20,7 +19,7 @@ public class ModTRSFunctions {
 	    }
 	}
     }
-    
+
     /**
      * Returns true if a user is online
      */
@@ -29,7 +28,7 @@ public class ModTRSFunctions {
 	if(player == null) return false;
 	return player.isOnline();
     }
-    
+
     /**
      * Join a String[] into a single string with a joiner
      */

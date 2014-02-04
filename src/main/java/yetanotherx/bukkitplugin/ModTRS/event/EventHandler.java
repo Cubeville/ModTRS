@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Event manager class (singleton)
- * 
+ *
  * @author yetanotherx
  */
 public class EventHandler {
@@ -21,7 +21,7 @@ public class EventHandler {
     }
 
     /**
-     * Register a listener to the plugin. 
+     * Register a listener to the plugin.
      * When an event is called, each listener gets called
      * @param listener Listener to register
      */
@@ -33,7 +33,7 @@ public class EventHandler {
 
     /**
      * Call an event, sending it to all the listeners.
-     * The listeners that were registered latest have the highest priority. 
+     * The listeners that were registered latest have the highest priority.
      * @param event Event to send
      */
     public void dispatch(Event event) {
@@ -92,7 +92,7 @@ public class EventHandler {
                     break;
             }
         }
-        
+
     }
 
     /**

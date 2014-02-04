@@ -75,7 +75,7 @@ public abstract class Event {
         /**
          * Called when /unclaim is sent
          */
-        COMMAND_UNCLAIM, 
+        COMMAND_UNCLAIM,
         /**
          * Called when /modtrs version is sent
          */

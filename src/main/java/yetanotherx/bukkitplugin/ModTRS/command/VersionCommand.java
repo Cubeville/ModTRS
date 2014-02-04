@@ -14,7 +14,7 @@ import yetanotherx.bukkitplugin.ModTRS.validator.NoArgumentsValidator;
 public class VersionCommand implements CommandExecutor {
 
     private ModTRS parent;
-    
+
     public VersionCommand(ModTRS parent) {
         this.parent = parent;
 	ValidatorHandler.getInstance().registerValidator( "version", new NoArgumentsValidator(this, parent) );
@@ -32,7 +32,7 @@ public class VersionCommand implements CommandExecutor {
         }
 
         player = event.getSender();
-	
+
 	if( !player.hasPerm("modtrs.command.version", false) ) {
 	    player.sendMessage(Message.parse("general.error.permission"));
 	}

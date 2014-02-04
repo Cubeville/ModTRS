@@ -68,7 +68,7 @@ public class ClaimCommand implements CommandExecutor {
                 parent.getAPI().saveRow(request);
 
                 ModTRSFunctions.messageMods(Message.parse("claim.mods", user.getName(), request.getId()), player.getServer());
-                
+
                 ModTRSUser user_player = parent.getTableHandler().getUser().getUserFromId(request.getUserId());
 
                 Player target = player.getServer().getPlayer(user_player.getName());

@@ -13,7 +13,7 @@ import yetanotherx.bukkitplugin.ModTRS.event.SaveRowEvent;
 
 /**
  * API to interact with the ModTRS plugin
- * 
+ *
  * @author yetanotherx
  */
 public class ModTRSAPI {
@@ -25,7 +25,7 @@ public class ModTRSAPI {
 
     /**
      * Create a new API instance
-     * 
+     *
      * @param parent Instance of the ModTRS plugin, retrieved from Server.getPlugin()
      */
     private ModTRSAPI(ModTRS parent) {
@@ -41,37 +41,37 @@ public class ModTRSAPI {
         ModTRS.log.debug("Initalizing the API!");
         return new ModTRSAPI(parent);
     }
-    
+
     /**
-     * Insert/Update a {@link ModTRSRequest} or {@link ModTRSUser} model. 
+     * Insert/Update a {@link ModTRSRequest} or {@link ModTRSUser} model.
      * If the model does not exist in the database, it will
      * insert automatically. Otherwise, it will simply update.
-     * 
+     *
      * @param model {@link ModTRSRequest} or {@link ModTRSUser} object
      */
     public void saveRow(Object model) {
-        
+
         SaveRowEvent event = new SaveRowEvent(model);
         EventHandler.getInstance().dispatch(event);
         if (event.isCancelled()) {
             return;
         }
-        
+
         parent.getDatabase().save(event.getModel());
     }
-    
+
     /**
      * Returns an instance of the {@link ModTRSRequestTable} class
-     * 
+     *
      * @return ModTRSRequestTable
      */
     public ModTRSRequestTable getRequestTable() {
         return parent.getTableHandler().getRequest();
     }
-    
+
     /**
      * Returns an instance of the {@link ModTRSUserTable} class
-     * 
+     *
      * @return ModTRSRequestTable
      */
     public ModTRSUserTable getUserTable() {
@@ -82,10 +82,10 @@ public class ModTRSAPI {
      * Gets a {@link ModTRSUser} instance with the username given.
      * If there is not a row in the database with that username,
      * it will automatically create one.
-     * 
+     *
      * @param name Username to get
      * @return {@link ModTRSUser} instance for the user
-     * @throws SQLException 
+     * @throws SQLException
      */
     public ModTRSUser getUserFromName(String name) throws SQLException {
         ModTRSUser user = parent.getTableHandler().getUser().getUserFromName(name);
@@ -96,17 +96,17 @@ public class ModTRSAPI {
             this.saveRow(user);
             user = parent.getTableHandler().getUser().getUserFromName(name);
         }
-        
+
         return user;
-        
+
     }
-    
+
     /**
      * Run a ModTRS command from the given username, bypassing all permissions. Returns a {@link CommandResult} instance
-     * 
-     * For example: sendCommandWithUsername( "Yetanotherx", "check", "p:2", "t:open" ) 
+     *
+     * For example: sendCommandWithUsername( "Yetanotherx", "check", "p:2", "t:open" )
      * is equal to Yetanotherx typing this in chat: /check p:2 t:open
-     * 
+     *
      * @param username Username to run the command from
      * @param command Command name to run
      * @param args Arguments to pass
@@ -117,13 +117,13 @@ public class ModTRSAPI {
         boolean output = parent.onCommand(sender, parent.getCommand(command), command, args);
         return new CommandResult(sender.getResult(), output);
     }
-    
+
     /**
      * Run a ModTRS command (bypassing all permissions). Returns a {@link CommandResult} instance.
-     * 
-     * For example: sendCommandWithUsername( "check", "p:2", "t:open" ) 
+     *
+     * For example: sendCommandWithUsername( "check", "p:2", "t:open" )
      * is equal to a user called "internal-code" typing this in chat: /check p:2 t:open
-     * 
+     *
      * @param command Command name to run
      * @param args Arguments to pass
      * @return CommandResult
@@ -135,11 +135,11 @@ public class ModTRSAPI {
     }
 
     /**
-     * Returns the instance of the ModTRS plugin. 
+     * Returns the instance of the ModTRS plugin.
      * @return ModTRS
      */
     public ModTRS getPlugin() {
         return parent;
     }
-    
+
 }

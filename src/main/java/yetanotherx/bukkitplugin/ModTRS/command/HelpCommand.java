@@ -17,7 +17,7 @@ public class HelpCommand implements CommandExecutor {
 
     public HelpCommand(ModTRS parent) {
 	ValidatorHandler.getInstance().registerValidator( "help", new EmptyValidator(this, parent) );
-	
+
     }
 
     @Override
@@ -32,13 +32,13 @@ public class HelpCommand implements CommandExecutor {
         }
 
         player = event.getSender();
-	
+
 	ArrayList<String> commands = ModTRSHelp.getMessages(player);
-	
+
 	for( String commandString : commands ) {
 	    player.sendMessage(commandString);
 	}
-	
+
 
 	return true;
 

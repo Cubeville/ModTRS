@@ -21,7 +21,7 @@ public class Update2_0 extends ModTRSUpdateBase {
         if (ModTRSSettings.config.getProperty("modtrs.database") != null) {
 
             ModTRS.log.info("Updating configuration and database to version 2.0");
-            
+
             Configuration oldConfig = ModTRSSettings.config;
             boolean oldDebug = oldConfig.getBoolean("modtrs.debug", false);
             boolean oldCommands = oldConfig.getBoolean("modtrs.log_commands", false);
@@ -30,7 +30,7 @@ public class Update2_0 extends ModTRSUpdateBase {
             int oldRequests = oldConfig.getInt("modtrs.max_requests", -1);
             int oldRPP = oldConfig.getInt("modtrs.requests_per_page", 5);
             HashMap<String, String> oldDatabase = new HashMap<String, String>();
-            
+
             List<String> dbKeys = oldConfig.getKeys("modtrs.database");
 
             if (dbKeys != null) {

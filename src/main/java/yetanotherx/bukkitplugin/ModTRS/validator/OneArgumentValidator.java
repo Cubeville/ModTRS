@@ -15,5 +15,5 @@ public class OneArgumentValidator extends Validator {
         }
         return true;
     }
-    
+
 }

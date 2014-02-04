@@ -42,16 +42,16 @@ public abstract class Validator {
     protected boolean isAtLeastArgs( String[] args, int length ) {
 	return args.length >= length;
     }
-    
+
     /**
      * Returns true if a value exists inside a String[]
      */
     protected boolean inArray(String substring, String[] strings) {
-	
+
 	for( String string : strings ) {
 	    if( string.equals(substring) ) return true;
 	}
-	
+
 	return false;
     }
 

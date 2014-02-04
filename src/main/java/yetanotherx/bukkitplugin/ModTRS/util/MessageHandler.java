@@ -27,7 +27,7 @@ public class MessageHandler {
         dataDirectory.mkdirs();
 
         File customMessagesFile = new File(dataDirectory, "messages.yml");
-        
+
         if (!customMessagesFile.exists()) {
             InputStream input = parent.getResource("messages.yml");
             if (input != null) {
@@ -63,7 +63,7 @@ public class MessageHandler {
 
         FileConfiguration customMessagesConf = new YamlConfiguration();
         customMessagesConf.load(customMessagesFile);
-        
+
         InputStream defaultMessagesFile = parent.getResource("messages.yml");
         FileConfiguration defaultMessagesConf = new YamlConfiguration();
         defaultMessagesConf.load(defaultMessagesFile);
@@ -73,7 +73,7 @@ public class MessageHandler {
                 customMessagesConf.set(key, defaultMessagesConf.getString(key));
             }
         }
-        
+
         this.customMessages = customMessagesConf.getValues(true);
 
         ModTRS.log.debug("Messages loaded");

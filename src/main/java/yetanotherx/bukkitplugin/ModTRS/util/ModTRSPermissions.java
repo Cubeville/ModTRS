@@ -51,7 +51,7 @@ public class ModTRSPermissions {
     public static HandlerType getHandlerType() {
         return handlerType;
     }
-    
+
     public static boolean has(Player player, String permission, boolean restricted) {
         if (player.isOp()) return true;
         switch (ModTRSPermissions.getHandlerType()) {

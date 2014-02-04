@@ -78,7 +78,7 @@ public class CompleteCommand implements CommandExecutor {
                 if (!message.isEmpty()) {
                     ModTRSFunctions.messageMods(Message.parse("closed.mod_comment", message), player.getServer());
                 }
-                
+
                 ModTRSUser user_player = parent.getTableHandler().getUser().getUserFromId(request.getUserId());
 
                 Player target = player.getServer().getPlayer(user_player.getName());

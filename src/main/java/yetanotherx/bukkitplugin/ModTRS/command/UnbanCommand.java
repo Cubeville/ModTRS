@@ -48,12 +48,12 @@ public class UnbanCommand implements CommandExecutor {
                 player.sendMessage(Message.parse("unban.not_banned", user.getName()));
                 return true;
             }
-            
+
             user.setBanned(0);
             user.save(parent);
-            
+
             ModTRSFunctions.messageMods(Message.parse("unban.mods", user.getName()), player.getServer());
-            
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -63,5 +63,5 @@ public class UnbanCommand implements CommandExecutor {
         return true;
 
     }
-    
+
 }

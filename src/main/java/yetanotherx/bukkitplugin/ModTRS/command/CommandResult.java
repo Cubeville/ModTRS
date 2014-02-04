@@ -2,16 +2,16 @@ package yetanotherx.bukkitplugin.ModTRS.command;
 
 /**
  * Store the result of sending a command
- * 
+ *
  * @author yetanotherx
  */
 public class CommandResult {
-    
+
     /**
      * Text that was sent to the "user"
      */
     private String output;
-    
+
     /**
      * Boolean value, if it returned true or false
      */
@@ -29,7 +29,7 @@ public class CommandResult {
 
     /**
      * Return the text that was sent using player.sendMessage()
-     * @return 
+     * @return
      */
     public String getOutput() {
         return output;
@@ -37,10 +37,10 @@ public class CommandResult {
 
     /**
      * Returns if the onCommand method returned true or false
-     * @return 
+     * @return
      */
     public boolean getResult() {
         return result;
     }
-    
+
 }

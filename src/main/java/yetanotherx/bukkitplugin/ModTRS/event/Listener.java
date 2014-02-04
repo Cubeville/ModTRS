@@ -1,7 +1,7 @@
 package yetanotherx.bukkitplugin.ModTRS.event;
 
 public class Listener {
-    
+
     public void onCommandBan(CommandBanEvent event) {}
     public void onCommandUnban(CommandUnbanEvent event) {}
     public void onCommandModBroadcast(CommandModBroadcastEvent event) {}
@@ -19,5 +19,5 @@ public class Listener {
     public void onCommandUnclaim(CommandUnclaimEvent event) {}
     public void onCommandVersion(CommandVersionEvent event) {}
     public void onSaveRow(SaveRowEvent event) {}
-    
+
 }

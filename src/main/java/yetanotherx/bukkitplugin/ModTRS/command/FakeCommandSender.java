@@ -18,11 +18,11 @@ public class FakeCommandSender implements CommandSender {
     public FakeCommandSender(String name) {
         this.name = name;
     }
-    
+
     public FakeCommandSender() {
         this.name = "internal-code";
     }
-    
+
     @Override
     public void sendMessage(String string) {
         this.result.append(string).append("\n");
@@ -37,15 +37,16 @@ public class FakeCommandSender implements CommandSender {
     public Server getServer() {
         return Bukkit.getServer();
     }
-    
+
     public String getResult() {
         return this.result.toString();
     }
-    
+
     public void clearResult() {
         this.result = new StringBuilder();
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
@@ -106,5 +107,9 @@ public class FakeCommandSender implements CommandSender {
     @Override
     public void setOp(boolean bln) {
     }
-    
+
+    @Override
+    public void sendMessage(String[] arg0) {
+    }
+
 }

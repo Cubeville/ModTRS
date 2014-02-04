@@ -19,23 +19,23 @@ public class ModTRSRequest implements Serializable {
 
     @Id
     private int id;
-    
+
     @NotNull
     private int userId;
-    
+
     private int modId = 0;
     private long modTimestamp = 0;
     private String modComment = "";
-    
+
     @NotNull
     private long tstamp;
-    
+
     @NotNull
     private String world;
-    
+
     @NotNull
     private int x, y, z;
-    
+
     @NotNull
     private String text;
     private int status = 0;
@@ -147,11 +147,11 @@ public class ModTRSRequest implements Serializable {
     public void setZ(int z) {
         this.z = z;
     }
-    
-    
-    
+
+
+
     public String getStatusText( boolean color ) {
-	
+
 	if( color ) {
 	    switch( this.status ) {
 

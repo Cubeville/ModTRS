@@ -37,7 +37,7 @@ public class ModreqCommand implements CommandExecutor {
         if (event.isCancelled()) {
             return true;
         }
-        
+
         joined = event.getText();
         player = event.getSender();
 
@@ -56,7 +56,7 @@ public class ModreqCommand implements CommandExecutor {
             }
 
             ModTRSUser user = parent.getAPI().getUserFromName(player.getName());
-            
+
             if( user.getBanned() != 0 ) {
                 player.sendMessage(Message.parse("modreq.error.banned"));
                 return true;
@@ -73,7 +73,7 @@ public class ModreqCommand implements CommandExecutor {
 
             }
 
-            ModTRSRequest request = new ModTRSRequest();    
+            ModTRSRequest request = new ModTRSRequest();
             request.setUserId(user.getId());
             request.setText(joined);
             request.setTstamp(System.currentTimeMillis());

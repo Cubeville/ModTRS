@@ -8,7 +8,7 @@ public class OneArgumentIntegerValidator extends Validator {
 
     public OneArgumentIntegerValidator(CommandExecutor command, ModTRS parent) {
     }
-    
+
     @Override
     public boolean isValid(String[] args) {
 	if( !this.isAtLeastArgs(args, 1) ) return false; //Must have 1 argument

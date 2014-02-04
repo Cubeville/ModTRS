@@ -14,7 +14,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
 import javax.persistence.PersistenceException;
-import org.bukkit.event.Event;
 import yetanotherx.bukkitplugin.ModTRS.api.ModTRSAPI;
 import yetanotherx.bukkitplugin.ModTRS.listener.ModTRSListener;
 
@@ -35,8 +34,8 @@ import yetanotherx.bukkitplugin.ModTRS.listener.ModTRSListener;
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- * Unless otherwise specified, this license applies to all the files in 
+ *
+ * Unless otherwise specified, this license applies to all the files in
  * the 'yetanothrx.bukkitplugin.ModTRS' package, and all its subpackages.
  */
 public class ModTRS extends JavaPlugin {
@@ -57,7 +56,7 @@ public class ModTRS extends JavaPlugin {
 
     /**
      * Perform some massive loading action
-     * 
+     *
      * Step 1: Load and parse config file, creating it if it doesn't exist.
      * Step 2: Load and parse the messages files
      * Step 3: Check for updates in the code
@@ -68,7 +67,7 @@ public class ModTRS extends JavaPlugin {
      * Step 8: Register events and listeners
      * Step 9: Register commands
      * Step 10: Load the API
-     * 
+     *
      */
     @Override
     public void onEnable() {
@@ -83,7 +82,7 @@ public class ModTRS extends JavaPlugin {
             this.listener = new ModTRSListener(this);
             this.commandHandler = CommandHandler.load(this);
             this.api = ModTRSAPI.load(this);
-            
+
             this.getServer().getPluginManager().registerEvents(this.listener, this);
 
             log.info("Plugin enabled! (version " + this.getDescription().getVersion() + ")");

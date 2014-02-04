@@ -68,10 +68,10 @@ public class UnclaimCommand implements CommandExecutor {
 
 
                 request.setModId(0);
-                request.setModTimestamp((long) 0);
+                request.setModTimestamp(0);
                 request.setStatus(0);
                 parent.getAPI().saveRow(request);
-                
+
                 ModTRSUser user = parent.getTableHandler().getUser().getUserFromId(request.getUserId());
                 if( parent.getServer().getPlayer(user.getName()) != null ) {
                     parent.getServer().getPlayer(user.getName()).sendMessage(Message.parse("unclaim.unclaimed.user", mod.getName()));

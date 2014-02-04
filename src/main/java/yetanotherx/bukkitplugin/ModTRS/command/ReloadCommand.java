@@ -16,7 +16,7 @@ import yetanotherx.bukkitplugin.ModTRS.validator.ValidatorHandler;
 public class ReloadCommand implements CommandExecutor {
 
     private ModTRS parent;
-    
+
     public ReloadCommand(ModTRS parent) {
         this.parent = parent;
         ValidatorHandler.getInstance().registerValidator("reload", new NoArgumentsValidator(this, parent));

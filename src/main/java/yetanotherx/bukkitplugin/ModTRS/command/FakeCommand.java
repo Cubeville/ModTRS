@@ -13,5 +13,5 @@ class FakeCommand extends Command {
     public boolean execute(CommandSender cs, String string, String[] strings) {
         return true;
     }
-    
+
 }

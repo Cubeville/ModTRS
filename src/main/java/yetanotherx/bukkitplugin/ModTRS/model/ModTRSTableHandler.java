@@ -6,10 +6,10 @@ public class ModTRSTableHandler {
 
     private ModTRSRequestTable requestTable;
     private ModTRSUserTable userTable;
-    
+
     private ModTRSTableHandler() {
     }
-    
+
     public static ModTRSTableHandler load(ModTRS parent) {
         ModTRSTableHandler instance = new ModTRSTableHandler();
         instance.requestTable = new ModTRSRequestTable(parent);
@@ -24,5 +24,5 @@ public class ModTRSTableHandler {
     public ModTRSUserTable getUser() {
         return userTable;
     }
-    
+
 }
