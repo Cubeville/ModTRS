@@ -13,20 +13,17 @@ public class ModTRSCommandSender {
 
     private ConsoleCommandSender console;
     private Player player;
-    private FakeCommandSender fake;
 
     public ModTRSCommandSender(CommandSender sender) {
         if (sender instanceof Player) {
             player = (Player) sender;
         } else if (sender instanceof ConsoleCommandSender) {
             console = (ConsoleCommandSender) sender;
-        } else if (sender instanceof FakeCommandSender) {
-            fake = (FakeCommandSender) sender;
         }
     }
 
     public boolean isValidSender() {
-        return console != null || player != null || fake != null;
+        return console != null || player != null;
     }
 
     public void sendMessage(String string) {
@@ -34,13 +31,11 @@ public class ModTRSCommandSender {
             console.sendMessage(string);
         } else if (player != null) {
             player.sendMessage(string);
-        } else if (fake != null) {
-            fake.sendMessage(string);
         }
     }
 
     public boolean hasPerm(String permission, boolean restricted) {
-        if (this.console != null || this.fake != null) {
+        if (this.console != null) {
             return true;
         }
 
@@ -57,8 +52,6 @@ public class ModTRSCommandSender {
             return console.getServer();
         } else if (player != null) {
             return player.getServer();
-        } else if (fake != null) {
-            return fake.getServer();
         }
         return null;
     }
@@ -68,14 +61,12 @@ public class ModTRSCommandSender {
             return "console";
         } else if (player != null) {
             return ChatColor.stripColor(player.getName());
-        } else if (fake != null) {
-            return fake.getName();
         }
         return "";
     }
 
     public World getWorld() {
-        if (console != null || fake != null) {
+        if (console != null) {
             return this.getServer().getWorlds().get(0);
         } else if (player != null) {
             return player.getWorld();
@@ -84,7 +75,7 @@ public class ModTRSCommandSender {
     }
 
     public Location getLocation() {
-        if (console != null || fake != null) {
+        if (console != null) {
             return new Location(this.getServer().getWorlds().get(0), 0, 0, 0);
         } else if (player != null) {
             return player.getLocation();

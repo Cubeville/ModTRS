@@ -2,12 +2,10 @@ package yetanotherx.bukkitplugin.ModTRS.api;
 
 import java.sql.SQLException;
 import yetanotherx.bukkitplugin.ModTRS.ModTRS;
-import yetanotherx.bukkitplugin.ModTRS.command.CommandResult;
 import yetanotherx.bukkitplugin.ModTRS.model.ModTRSRequest;
 import yetanotherx.bukkitplugin.ModTRS.model.ModTRSRequestTable;
 import yetanotherx.bukkitplugin.ModTRS.model.ModTRSUser;
 import yetanotherx.bukkitplugin.ModTRS.model.ModTRSUserTable;
-import yetanotherx.bukkitplugin.ModTRS.command.FakeCommandSender;
 import yetanotherx.bukkitplugin.ModTRS.event.EventHandler;
 import yetanotherx.bukkitplugin.ModTRS.event.SaveRowEvent;
 
@@ -99,39 +97,6 @@ public class ModTRSAPI {
 
         return user;
 
-    }
-
-    /**
-     * Run a ModTRS command from the given username, bypassing all permissions. Returns a {@link CommandResult} instance
-     *
-     * For example: sendCommandWithUsername( "Yetanotherx", "check", "p:2", "t:open" )
-     * is equal to Yetanotherx typing this in chat: /check p:2 t:open
-     *
-     * @param username Username to run the command from
-     * @param command Command name to run
-     * @param args Arguments to pass
-     * @return CommandResult
-     */
-    public CommandResult sendCommandWithUsername(String username, String command, String ... args) {
-        FakeCommandSender sender = new FakeCommandSender(username);
-        boolean output = parent.onCommand(sender, parent.getCommand(command), command, args);
-        return new CommandResult(sender.getResult(), output);
-    }
-
-    /**
-     * Run a ModTRS command (bypassing all permissions). Returns a {@link CommandResult} instance.
-     *
-     * For example: sendCommandWithUsername( "check", "p:2", "t:open" )
-     * is equal to a user called "internal-code" typing this in chat: /check p:2 t:open
-     *
-     * @param command Command name to run
-     * @param args Arguments to pass
-     * @return CommandResult
-     */
-    public CommandResult sendCommand(String command, String ... args) {
-        FakeCommandSender sender = new FakeCommandSender();
-        boolean output = parent.onCommand(sender, parent.getCommand(command), command, args);
-        return new CommandResult(sender.getResult(), output);
     }
 
     /**
