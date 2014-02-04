@@ -24,16 +24,8 @@ public class ModTRSCommandSender {
         sender.sendMessage(string);
     }
 
-    public boolean hasPerm(String permission, boolean restricted) {
-        if (restricted) {
-            return sender.hasPermission(permission);
-        }
-
-        return true;
-    }
-
     public boolean hasPerm(String permission) {
-        return hasPerm(permission, true);
+        return sender.hasPermission(permission);
     }
 
     public Server getServer() {

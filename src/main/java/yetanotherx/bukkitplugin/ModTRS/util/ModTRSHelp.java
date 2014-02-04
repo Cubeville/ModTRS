@@ -49,7 +49,7 @@ public class ModTRSHelp {
         for (String[] command : helpCommands) {
             //The fourth field is added to ones that non-ops can use when using ops.txt
             if (command.length > 3) {
-                if (player.hasPerm(command[2], false)) {
+                if (player.hasPerm(command[2])) {
                     messages.add(Message.parse("modreq.help.list_item", command[0], command[1]));
                 }
             } else {

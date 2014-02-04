@@ -31,7 +31,7 @@ public class ModlistCommand implements CommandExecutor {
 
         player = event.getSender();
 
-        if (!player.hasPerm("modtrs.command.modlist", false)) {
+        if (!player.hasPerm("modtrs.command.modlist")) {
             player.sendMessage(Message.parse("general.error.permission"));
             return true;
         }

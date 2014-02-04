@@ -33,7 +33,7 @@ public class VersionCommand implements CommandExecutor {
 
         player = event.getSender();
 
-	if( !player.hasPerm("modtrs.command.version", false) ) {
+	if( !player.hasPerm("modtrs.command.version") ) {
 	    player.sendMessage(Message.parse("general.error.permission"));
 	}
 	else {

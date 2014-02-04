@@ -68,7 +68,7 @@ public class CheckCommand implements CommandExecutor {
         try {
 
             if (!player.hasPerm("modtrs.command.check")) {
-                if (!player.hasPerm("modtrs.command.check.self", false)) {
+                if (!player.hasPerm("modtrs.command.check.self")) {
                     player.sendMessage(Message.parse("general.error.permission"));
                     return true;
                 } else {

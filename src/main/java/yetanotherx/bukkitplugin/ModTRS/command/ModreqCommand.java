@@ -41,7 +41,7 @@ public class ModreqCommand implements CommandExecutor {
         joined = event.getText();
         player = event.getSender();
 
-        if (!player.hasPerm("modtrs.command.modreq", false)) {
+        if (!player.hasPerm("modtrs.command.modreq")) {
             player.sendMessage(Message.parse("general.error.permission"));
             return true;
         }
