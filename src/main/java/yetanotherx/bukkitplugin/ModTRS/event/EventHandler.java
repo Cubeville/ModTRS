@@ -45,9 +45,6 @@ public class EventHandler {
                 case COMMAND_UNBAN:
                     listener.onCommandUnban((CommandUnbanEvent) event);
                     break;
-                case COMMAND_MOD_BROADCAST:
-                    listener.onCommandModBroadcast((CommandModBroadcastEvent) event);
-                    break;
                 case COMMAND_CHECK:
                     listener.onCommandCheck((CommandCheckEvent) event);
                     break;
@@ -65,9 +62,6 @@ public class EventHandler {
                     break;
                 case COMMAND_HOLD:
                     listener.onCommandHold((CommandHoldEvent) event);
-                    break;
-                case COMMAND_MODLIST:
-                    listener.onCommandModlist((CommandModlistEvent) event);
                     break;
                 case COMMAND_MODREQ:
                     listener.onCommandModreq((CommandModreqEvent) event);

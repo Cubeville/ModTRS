@@ -25,10 +25,6 @@ public abstract class Event {
          */
         COMMAND_UNBAN,
         /**
-         * Called when /mod-broadcast is sent
-         */
-        COMMAND_MOD_BROADCAST,
-        /**
          * Called when /check is sent
          */
         COMMAND_CHECK,
@@ -52,10 +48,6 @@ public abstract class Event {
          * Called when /hold is sent
          */
         COMMAND_HOLD,
-        /**
-         * Called when /modlist is sent
-         */
-        COMMAND_MODLIST,
         /**
          * Called when /modreq is sent
          */

@@ -39,13 +39,6 @@ commands:
     modreq-unban:
         description: Reallow a user to make mod requests
         usage: /<command> [username]
-    mod-broadcast:
-        description: Send a message to other moderators
-        usage: /<command> [message]
-        aliases: [mb]
-    modlist:
-        description: List all currently online moderators
-        usage: /<command>
     modtrs:
         description: Command line only
         usage: /<command>
@@ -73,14 +66,10 @@ permissions:
         description: Permission to use /check to see your own requests
     modtrs.command.complete: 
         description: Permission to use /done, /claim, /unclaim, /hold
-    modtrs.command.broadcast:
-        description: Permission to use /mod-broadcast
     modtrs.command.modlist:
         description: Permission to use /modlist
     modtrs.command.modreq:
         description: Permission to use /modreq
-    modtrs.mod:
-        description: Give this to all moderators. This is used for /modlist and /mb
     modtrs.command.reload:
         description: Permission to use /modtrs reload
     modtrs.command.teleport:
