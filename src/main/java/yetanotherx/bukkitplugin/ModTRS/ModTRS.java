@@ -1,6 +1,5 @@
 package yetanotherx.bukkitplugin.ModTRS;
 
-import yetanotherx.bukkitplugin.ModTRS.util.ModTRSPermissions;
 import yetanotherx.bukkitplugin.ModTRS.util.ModTRSSettings;
 import yetanotherx.bukkitplugin.ModTRS.util.ModTRSUpdate;
 import yetanotherx.bukkitplugin.ModTRS.util.ModTRSLogger;
@@ -74,7 +73,6 @@ public class ModTRS extends JavaPlugin {
 
         try {
             ModTRSSettings.load(this);
-            ModTRSPermissions.load(this);
             MessageHandler.getInstance().load(this);
             this.setupDatabase();
             ModTRSUpdate.load(this);

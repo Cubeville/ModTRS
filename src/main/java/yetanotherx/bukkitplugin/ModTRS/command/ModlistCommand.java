@@ -9,7 +9,6 @@ import yetanotherx.bukkitplugin.ModTRS.ModTRS;
 import yetanotherx.bukkitplugin.ModTRS.event.CommandModlistEvent;
 import yetanotherx.bukkitplugin.ModTRS.event.EventHandler;
 import yetanotherx.bukkitplugin.ModTRS.util.Message;
-import yetanotherx.bukkitplugin.ModTRS.util.ModTRSPermissions;
 import yetanotherx.bukkitplugin.ModTRS.validator.NoArgumentsValidator;
 import yetanotherx.bukkitplugin.ModTRS.validator.ValidatorHandler;
 
@@ -46,7 +45,7 @@ public class ModlistCommand implements CommandExecutor {
                 continue;
             }
 
-            if (ModTRSPermissions.has(user, "modtrs.mod")) {
+            if (user.hasPermission("modtrs.mod")) {
                 mods = mods + user.getName() + ", ";
             }
         }

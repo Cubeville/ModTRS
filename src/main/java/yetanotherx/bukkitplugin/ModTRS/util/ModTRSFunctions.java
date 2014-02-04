@@ -14,7 +14,7 @@ public class ModTRSFunctions {
 	Player[] players = server.getOnlinePlayers();
 
 	for( Player user : players ) {
-	    if( ModTRSPermissions.has(user, "modtrs.mod") ) {
+	    if( user.hasPermission("modtrs.mod") ) {
 		user.sendMessage(message);
 	    }
 	}
